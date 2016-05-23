@@ -1,0 +1,1 @@
+document.getElementsByClassName('sectionContent-mainContent')[0].innerHTML += '<button class="button buttonGo" onclick="window.location.assign(document.getElementsByTagName(\'video\')[0].src)">Download</button>';

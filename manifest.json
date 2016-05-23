@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Alura Download",
+  "description": "Download de videos do alura",
+  "version": "1.0",
+  "content_scripts" : [
+    {
+      "matches" : ["https://cursos.alura.com.br/course/*"],
+      "js" : ["main.js"]
+    }
+  ]
+}
