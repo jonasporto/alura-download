@@ -1,1 +1,1 @@
-document.getElementsByClassName('sectionContent-mainContent')[0].innerHTML += '<button class="button buttonGo" onclick="window.location.assign(document.getElementsByTagName(\'video\')[0].src)">Download</button>';
+document.querySelector('.task-actions .container').innerHTML += '<button class="task-actions-button" style="background-color:#bf2f2f;" onclick="window.location.assign(document.getElementsByTagName(\'video\')[0].src)">Download</button>';
