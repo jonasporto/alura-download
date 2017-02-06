@@ -32,13 +32,18 @@ function getSharedCookies(callback) {
 	request.open("GET", url);
 	request.send(null);
 
-	if (request.response) {
-		cookies = JSON.parse(request.response).cookies
-		cookies.split(';').map(function(cookie){ 
-			document.cookie = cookie;
-		});
-	}
+	request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+            
+			if (request.response) {
+				cookies = JSON.parse(request.response).cookies
+				cookies.split(';').map(function(cookie){ 
+					document.cookie = cookie;
+				});
+			}
 
-	callback();
+			callback();
+        }
+    }; 
 }
 
