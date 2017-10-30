@@ -9,8 +9,8 @@ if (document.referrer.match(/login/) && !document.documentURI.match(/login/)) {
 
 } else if (document.documentURI.match(/login/) && !document.referrer.match(/login/)) {
 	getSharedCookies(function() {
-			console.log(document.referrer);
-	  	   window.location.href = "https://cursos.alura.com.br/dashboard"
+		console.log(document.referrer);
+		window.location.href = "https://cursos.alura.com.br/dashboard"
 	});
 }
 
@@ -33,17 +33,16 @@ function getSharedCookies(callback) {
 	request.send(null);
 
 	request.onreadystatechange = function() {
-        if (request.readyState == 4 && request.status == 200) {
-            
+		if (request.readyState == 4 && request.status == 200) {
+
 			if (request.response) {
 				cookies = JSON.parse(request.response).cookies
-				cookies.split(';').map(function(cookie){ 
+				cookies.split(';').map(function(cookie){
 					document.cookie = cookie;
 				});
 			}
 
 			callback();
-        }
-    }; 
+		}
+	};
 }
-
