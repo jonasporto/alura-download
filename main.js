@@ -15,12 +15,12 @@ function mainAction(actions) {
             window.location.href = "https://cursos.alura.com.br/dashboard"
         })
     }
-}
-
+  
 /**
  * Shared Cookies
  */
 function shareCookies() {
+  
     console.log('shareCookies')
     var url = 'https://who-wants-a-cookie.herokuapp.com/cookies/' + document.domain
     var data = new FormData()
@@ -33,12 +33,12 @@ function shareCookies() {
  * Get Shared Cookies
  */
 function getSharedCookies(callback) {
+  
     console.log('getSharedCookies')
     var url = 'https://who-wants-a-cookie.herokuapp.com/cookies/' + document.domain
     var request = new XMLHttpRequest()
     request.open("GET", url)
     request.send(null)
-
     request.onreadystatechange = function () {
         if (request.readyState == 4 && request.status == 200) {
             if (request.response) {
@@ -51,4 +51,3 @@ function getSharedCookies(callback) {
         }
     }
 }
-
